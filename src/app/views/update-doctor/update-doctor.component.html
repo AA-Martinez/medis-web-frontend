@@ -1,0 +1,28 @@
+<app-header></app-header>
+<br><br>
+
+<div class="container">
+
+    <form [formGroup]="updateForm" (ngSubmit)="postForm(updateForm.value)">
+        <div class="form-group">
+            <label for="exampleFormControllerInput1">Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre doctor" formControlName="first_name">
+        </div> <br>
+        <div class="form-group">
+            <label for="exampleFormControllerInput1">Apellido</label>
+            <input type="text" class="form-control" placeholder="Apellido doctor" formControlName="last_name">
+        </div> <br>
+        <div class="form-group">
+            <label for="exampleFormControllerInput1">Correo electronico</label>
+            <input type="text" class="form-control" placeholder="Correo electronico" formControlName="email">
+        </div> <br>
+        <div class="form-group">
+            <label for="exampleFormControllerInput1">Biografia</label>
+            <input type="text" class="form-control" placeholder="Biografia doctor" formControlName="bio">
+        </div> <br>
+        <button type="submit" class="btn btn-primary me-2">Guardar</button>
+        <button type="button" class="btn btn-dark" (click)="backToDashboard()">Volver</button>
+    </form>
+
+</div>
+

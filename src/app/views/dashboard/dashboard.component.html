@@ -1,0 +1,75 @@
+<app-header></app-header>
+
+<div class="container">
+
+    <br>
+
+    <button type="button" class="btn" (click)="registerDoctor()">Registrar Doctor</button>
+    <button type="button" class="btn" (click)="registerIntern()">Registrar Interno</button>
+
+
+    <br><br>
+    <h3>Lista de medicos</h3><br>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Specialidad</th>
+                <th scope="col">Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doctor of doctors" (click)="updateDoctor(doctor.appUser!.id)">
+                <th scope="row">{{ doctor.appUser!.id }}</th>
+                <td>{{ doctor.appUser!.first_name }}</td>
+                <td>{{ doctor.appUser!.last_name }}</td>
+                <td>{{ doctor.specialty!.specialty }}</td>
+                <td>{{ doctor.appUser!.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <h3>Lista de internos</h3><br>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let intern of interns" (click)="updateIntern(intern.appUser!.id)">
+                <th scope="row">{{ intern.appUser!.id }}</th>
+                <td>{{ intern.appUser!.first_name }}</td>
+                <td>{{ intern.appUser!.last_name }}</td>
+                <td>{{ intern.appUser!.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <h3>Lista de especialidades</h3><br>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let specialty of specialties">
+                <th scope="row">{{ specialty.id }}</th>
+                <td>{{ specialty.specialty }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

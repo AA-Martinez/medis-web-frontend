@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<br><br>
+
+<div class="container">
+
+    <form [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
+        <div class="form-group">
+            <label for="exampleFormControllerInput1">Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre interno" formControlName="first_name">
+        </div> <br>
+        <div class="form-group">
+            <label for="exampleFormControllerInput1">Apellido</label>
+            <input type="text" class="form-control" placeholder="Apellido interno" formControlName="last_name">
+        </div> <br>
+        <div class="form-group">
+            <label for="exampleFormControllerInput1">Correo electronico</label>
+            <input type="text" class="form-control" placeholder="Correo electronico" formControlName="email">
+
+        </div> <br>
+        <div class="form-group">
+            <label for="exampleFormControllerInput1">Contraseña</label>
+            <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+        </div> <br>
+
+        <div>
+            <label for="exampleFormControllerInput1">Seleccione hospital</label>
+            <select class="select-css" (change)="onChange()" [(ngModel)]="selectedHospital" formControlName="hospital">
+                <option [ngValue]="undefined" disabled selected>
+                    Seleccione
+                </option>
+                <option *ngFor="let hospital of hospitals" [ngValue]="hospital">
+                    {{hospital.name}}
+                </option>
+            </select> <br>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary me-2">Guardar</button>
+        <button type="button" class="btn btn-dark" (click)="backToDashboard()">Volver</button>
+    </form>
+
+
+
+
+
+
+</div>
