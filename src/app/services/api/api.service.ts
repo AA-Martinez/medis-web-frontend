@@ -11,7 +11,7 @@ import { AppUserModel } from 'src/app/models/app.user.interface';
 })
 export class ApiService {
 
-  url: string = "http://localhost:8080/";
+  url: string = "http://medisbackendaws-env.eba-azpy8292.us-east-1.elasticbeanstalk.com/";
 
   constructor(private http: HttpClient) { }
 
