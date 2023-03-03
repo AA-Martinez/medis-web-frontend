@@ -44,6 +44,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Correo</th>
+                <th scope="col">Hospital</th>
             </tr>
         </thead>
         <tbody>
@@ -52,6 +53,7 @@
                 <td>{{ intern.appUser!.first_name }}</td>
                 <td>{{ intern.appUser!.last_name }}</td>
                 <td>{{ intern.appUser!.email }}</td>
+                <td>{{ intern.hospital!.name }}</td>
             </tr>
         </tbody>
     </table>
