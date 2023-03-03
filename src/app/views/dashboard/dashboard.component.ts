@@ -51,4 +51,10 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(["new-intern"])
   }
 
+  getStatus(status : any) {
+    if (status == 0)
+      return "No"
+    return "Si"
+  }
+
 }
